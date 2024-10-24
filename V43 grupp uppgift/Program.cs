@@ -72,45 +72,49 @@ namespace V43_grupp_uppgift
         }
         static void Admin()
         {
-            Console.WriteLine("1 | Inställning");
-            Console.WriteLine("2 | Lägg till användare");
-            Console.WriteLine("3 | Avsluta");
-            string val = Console.ReadLine();
-            if (val == "1")
+            bool inloggad = true;
+            while (inloggad)
             {
-                Console.WriteLine("1 | Byt till slumpmässig textfärg");
-                Console.WriteLine("2 | Byt konsolfönstret namn");
-                string val2 = Console.ReadLine();
-                if (val2 == "1")
+                Console.WriteLine("1 | Inställning");
+                Console.WriteLine("2 | Lägg till användare");
+                Console.WriteLine("3 | Avsluta");
+                string val = Console.ReadLine();
+                if (val == "1")
                 {
-                    // Get all values of the ConsoleColor enum
-                    Array colors = Enum.GetValues(typeof(ConsoleColor));
+                    Console.WriteLine("1 | Byt till slumpmässig textfärg");
+                    Console.WriteLine("2 | Byt konsolfönstret namn");
+                    string val2 = Console.ReadLine();
+                    if (val2 == "1")
+                    {
+                        // Get all values of the ConsoleColor enum
+                        Array colors = Enum.GetValues(typeof(ConsoleColor));
 
-                    // Generate a random index
-                    Random random = new Random();
-                    ConsoleColor randomColor = (ConsoleColor)colors.GetValue(random.Next(colors.Length));
+                        // Generate a random index
+                        Random random = new Random();
+                        ConsoleColor randomColor = (ConsoleColor)colors.GetValue(random.Next(colors.Length));
 
-                    // Set the console text color to the randomly selected color
-                    Console.ForegroundColor = randomColor;
+                        // Set the console text color to the randomly selected color
+                        Console.ForegroundColor = randomColor;
+                    }
+                    else if (val2 == "2")
+                    {
+                        Console.Title = "Mamma mia";
+
+                    }
                 }
-                else if (val2 == "2")
+                else if (val == "2")
                 {
-                    Console.Title = "Mamma mia";
-
+                    Console.WriteLine("Lägg till användare");
+                    Console.Write("\nAnvändare: ");
+                    string användarenman = Console.ReadLine();
+                    Console.Write("\nLössenord: ");
+                    string lössenord = Console.ReadLine();
+                    användare.Add(new User(användarenman, lössenord));
                 }
-            }
-            else if(val == "2")
-            {
-                Console.WriteLine("Lägg till användare");
-                Console.Write("\nAnvändare: ");
-                string användarenman = Console.ReadLine();
-                Console.Write("\nLössenord: ");
-                string lössenord = Console.ReadLine();
-                användare.Add(new User(användarenman, lössenord));
-            }
-            else if(val == "3")
-            {
-
+                else if (val == "3")
+                {
+                    inloggad = false;
+                }
             }
         }
         
