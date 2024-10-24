@@ -7,11 +7,25 @@ namespace V43_grupp_uppgift
         List<Användare> användare = new List<Användare> ();
         static void Main(string[] args)
         {
+
+            User admin = new User(true); 
+            User user = new User(false);
             Console.WriteLine("Välkommen att logga in");
             Console.Write("Användarnamn: ");
             string användarnamn = Console.ReadLine();
             Console.Write("Lössenord: ");
             string lösenord = Console.ReadLine();
+            if (admin.IsAdmin == true)
+            {
+                Admin();
+            }
+            else
+            {
+                Användare();
+            }
+
+            
+
 
         }
 
