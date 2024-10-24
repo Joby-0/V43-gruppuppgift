@@ -10,27 +10,38 @@ namespace V43_grupp_uppgift
         static void Main(string[] args)
         {
             
-            User admin = new User(true); 
-            User user = new User(false);
-            
+            User admin = new User(true, "Admin", "emma"); 
+            User user = new User(false, "User", "lösen");
+
+            användare.Add(admin);
+            användare.Add(user);
+
             Console.WriteLine("Välkommen att logga in");
             Console.Write("Användarnamn: ");
             string användarnamn = Console.ReadLine();
             Console.Write("Lössenord: ");
             string lösenord = Console.ReadLine();
-            if (admin.IsAdmin == true)
+            
+            
+            foreach (User a in användare)
             {
-                Admin();
-            }
-            else
-            {
-                
-                Användare(user);
+
+
+                if (a.UserName == användarnamn && a.Password == lösenord)
+                {
+                    if (admin.IsAdmin == true)
+                    {
+                        Admin();
+                    }
+                    else
+                    {
+                        Användare();
+                    }
+                }
+
             }
 
             
-
-
         }
 
         static void Användare(User användare)
@@ -50,7 +61,7 @@ namespace V43_grupp_uppgift
                 
                 if (val == "1")
                 {
-                    Console.WriteLine("Ditt lössenord är: " + användare.lössenord);
+                    Console.WriteLine("Ditt lössenord är: " + användare.Password);
                     Console.WriteLine("\n klicka på enter för att fortsätta...");
                     Console.ReadKey();
                 }
