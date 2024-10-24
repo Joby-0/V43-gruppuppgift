@@ -10,8 +10,8 @@ namespace V43_grupp_uppgift
         static void Main(string[] args)
         {
             
-            User admin = new User(true); 
-            User user = new User(false);
+            User admin = new User(true, "Admin", "emma"); 
+            User user = new User(false, "User", "lösen");
 
             användare.Add(admin);
             användare.Add(user);
@@ -25,7 +25,7 @@ namespace V43_grupp_uppgift
             foreach (User a in användare)
             {
 
-                if (a.IsAdmin)
+                if (a.UserName == användarnamn && a.Password == lösenord)
                 {
                     if (admin.IsAdmin == true)
                     {
@@ -36,8 +36,10 @@ namespace V43_grupp_uppgift
                         Användare();
                     }
                 }
-
+                
             }
+
+            
         }
 
         static void Användare(User användare)
