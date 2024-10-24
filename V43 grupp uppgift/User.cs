@@ -16,6 +16,11 @@ namespace V43_grupp_uppgift
         {
                 IsAdmin = isadmin;
         }
+        public User (string anv,  string l)
+        {
+            användarnamn = anv;
+            lössenord = l;
+        }
     }
 
 }   

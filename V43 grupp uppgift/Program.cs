@@ -5,7 +5,7 @@ namespace V43_grupp_uppgift
 {
     internal class Program
     {
-        List<User> användare = new List<User> ();
+        public static List<User> användare = new List<User> ();
         
         static void Main(string[] args)
         {
@@ -81,7 +81,7 @@ namespace V43_grupp_uppgift
                 Console.WriteLine("1 | Byt till slumpmässig textfärg");
                 Console.WriteLine("2 | Byt konsolfönstret namn");
                 string val2 = Console.ReadLine();
-                if (val2 == "2")
+                if (val2 == "1")
                 {
                     // Get all values of the ConsoleColor enum
                     Array colors = Enum.GetValues(typeof(ConsoleColor));
@@ -101,7 +101,12 @@ namespace V43_grupp_uppgift
             }
             else if(val == "2")
             {
-
+                Console.WriteLine("Lägg till användare");
+                Console.Write("\nAnvändare: ");
+                string användarenman = Console.ReadLine();
+                Console.Write("\nLössenord: ");
+                string lössenord = Console.ReadLine();
+                användare.Add(new User(användarenman, lössenord));
             }
             else if(val == "3")
             {
