@@ -31,7 +31,7 @@ namespace V43_grupp_uppgift
 
         static void Användare()
         {
-
+            //
         }
         static void Admin()
         {

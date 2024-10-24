@@ -9,6 +9,8 @@ namespace V43_grupp_uppgift
     internal class User
     {
         public bool IsAdmin { get; set; }
+        public string användarnamn { get; set; }
+        public string lössenord { get; set; }
 
         public User (bool isadmin)
         {
