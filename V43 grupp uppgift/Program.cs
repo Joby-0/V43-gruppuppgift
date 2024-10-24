@@ -1,16 +1,18 @@
 ﻿using System.ComponentModel.Design;
-
+using System;
+using System.Timers;
 namespace V43_grupp_uppgift
 {
     internal class Program
     {
         List<User> användare = new List<User> ();
+        
         static void Main(string[] args)
         {
             
             User admin = new User(true); 
             User user = new User(false);
-            Användare(user);
+            
             Console.WriteLine("Välkommen att logga in");
             Console.Write("Användarnamn: ");
             string användarnamn = Console.ReadLine();
@@ -22,6 +24,7 @@ namespace V43_grupp_uppgift
             }
             else
             {
+                
                 Användare(user);
             }
 
@@ -33,13 +36,18 @@ namespace V43_grupp_uppgift
         static void Användare(User användare)
         {
             bool inloggad = true;
+            
+
             while (inloggad)
             {
+                
                 
                 Console.WriteLine("Du är loggad");
                 Console.WriteLine("1 | Visa lössenord");
                 Console.WriteLine("2 | Avsluta");
+                
                 string val = Console.ReadLine();
+                
                 if (val == "1")
                 {
                     Console.WriteLine("Ditt lössenord är: " + användare.lössenord);
@@ -64,8 +72,43 @@ namespace V43_grupp_uppgift
         }
         static void Admin()
         {
+            Console.WriteLine("1 | Inställning");
+            Console.WriteLine("2 | Lägg till användare");
+            Console.WriteLine("3 | Avsluta");
+            string val = Console.ReadLine();
+            if (val == "1")
+            {
+                Console.WriteLine("1 | Byt till slumpmässig textfärg");
+                Console.WriteLine("2 | Byt konsolfönstret namn");
+                string val2 = Console.ReadLine();
+                if (val2 == "2")
+                {
+                    // Get all values of the ConsoleColor enum
+                    Array colors = Enum.GetValues(typeof(ConsoleColor));
 
+                    // Generate a random index
+                    Random random = new Random();
+                    ConsoleColor randomColor = (ConsoleColor)colors.GetValue(random.Next(colors.Length));
+
+                    // Set the console text color to the randomly selected color
+                    Console.ForegroundColor = randomColor;
+                }
+                else if (val2 == "2")
+                {
+                    Console.Title = "Mamma mia";
+
+                }
+            }
+            else if(val == "2")
+            {
+
+            }
+            else if(val == "3")
+            {
+
+            }
         }
+        
 
     }
 }
