@@ -42,7 +42,7 @@ namespace V43_grupp_uppgift
                 string val = Console.ReadLine();
                 if (val == "1")
                 {
-                    Console.WriteLine("Ditt lössenord är: " + användare.lössenord);
+                    Console.WriteLine("Ditt lössenord är: " + användare.Password);
                     Console.WriteLine("\n klicka på enter för att fortsätta...");
                     Console.ReadKey();
                 }
