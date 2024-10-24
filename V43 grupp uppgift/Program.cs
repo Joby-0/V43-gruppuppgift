@@ -35,7 +35,7 @@ namespace V43_grupp_uppgift
                     }
                     else
                     {
-                        Användare();
+                        Användare(a);
                     }
                 }
 
