@@ -21,8 +21,8 @@ namespace V43_grupp_uppgift
         }
         public User (string anv,  string l)
         {
-            användarnamn = anv;
-            lössenord = l;
+            UserName = anv;
+            Password = l;
         }
     }
 
