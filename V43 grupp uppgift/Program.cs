@@ -4,7 +4,7 @@ namespace V43_grupp_uppgift
 {
     internal class Program
     {
-        List<Användare> användare = new List<Användare> ();
+        List<User> användare = new List<User> ();
         static void Main(string[] args)
         {
 
