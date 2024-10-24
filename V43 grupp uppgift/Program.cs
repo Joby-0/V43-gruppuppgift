@@ -1,4 +1,6 @@
-﻿namespace V43_grupp_uppgift
+﻿using System.ComponentModel.Design;
+
+namespace V43_grupp_uppgift
 {
     internal class Program
     {
@@ -9,9 +11,7 @@
             Console.Write("Användarnamn: ");
             string användarnamn = Console.ReadLine();
             Console.Write("Lössenord: ");
-            string lössenord = Console.ReadLine();
-
-
+            string lösenord = Console.ReadLine();
 
         }
 
