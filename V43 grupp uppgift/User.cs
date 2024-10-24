@@ -12,6 +12,7 @@ namespace V43_grupp_uppgift
         public string UserName { get; set; }
         public string Password { get; set; }
 
+
         public User (bool isadmin, string userName, string password)
         {
             IsAdmin = isadmin;
