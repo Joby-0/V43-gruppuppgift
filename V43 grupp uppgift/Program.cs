@@ -4,30 +4,40 @@ namespace V43_grupp_uppgift
 {
     internal class Program
     {
-        List<User> användare = new List<User> ();
+
+        public static List<User> användare = new List<User> ();
+
         static void Main(string[] args)
         {
             
             User admin = new User(true); 
             User user = new User(false);
-            Användare(user);
+
+            användare.Add(admin);
+            användare.Add(user);
             Console.WriteLine("Välkommen att logga in");
             Console.Write("Användarnamn: ");
             string användarnamn = Console.ReadLine();
             Console.Write("Lössenord: ");
             string lösenord = Console.ReadLine();
-            if (admin.IsAdmin == true)
-            {
-                Admin();
-            }
-            else
-            {
-                Användare(user);
-            }
-
             
+            
+            foreach (User a in användare)
+            {
 
+                if (a.IsAdmin)
+                {
+                    if (admin.IsAdmin == true)
+                    {
+                        Admin();
+                    }
+                    else
+                    {
+                        Användare();
+                    }
+                }
 
+            }
         }
 
         static void Användare(User användare)
